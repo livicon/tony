@@ -1,0 +1,54 @@
+.navbar {
+  @apply flex pt-5 justify-between items-center px-6;
+
+  &.ltr {
+    @apply flex-row-reverse;
+  }
+
+  &__logo {
+    @apply text-3xl font-bold;
+  }
+
+  &__list {
+    @apply hidden lg:flex items-center gap-1;
+    li {
+      @apply cursor-pointer text-lg;
+    }
+  }
+
+  &__item {
+    @apply text-gray-400 font-light;
+    a {
+      @apply relative py-4 px-5 text-lg;
+    }
+
+    .navbar__link__active {
+      @apply text-blue;
+      &::after {
+        content: "";
+        width: 80%;
+        height: 3px;
+        background-color: var(--blue-color);
+        display: block;
+        position: absolute;
+        bottom: 0;
+        border-radius: 10rem;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  &__link {
+    @apply py-0 px-5 border-l text-gray-500 border-gray-200 text-lg;
+
+    &:nth-child(3) {
+      @apply border-0;
+    }
+  }
+}
+
+// Mobile Menu
+.mobile__menu {
+  @apply lg:hidden;
+}

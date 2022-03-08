@@ -1,0 +1,92 @@
+.agency__card {
+    @apply p-5 rounded-2xl transform hover:-translate-y-5 hover:shadow-2xl duration-200 cursor-pointer shadow-lg bg-secondary;
+
+    &__image {
+        @apply rounded-2xl;
+    }
+
+    &__body {
+        @apply flex flex-col gap-3 pt-4 pr-2;
+    }
+
+    &__title {
+        @apply text-2xl font-bold;
+    }
+
+    &__description {
+        @apply text-gray-500 text-lg;
+    }
+
+    &__button {
+        @apply mt-5 inline-flex text-lg text-blue font-bold items-center gap-2; 
+    }
+}
+
+.post__card {
+    @apply p-5 rounded-2xl transform hover:-translate-y-5 hover:shadow-2xl duration-200 cursor-pointer shadow-lg bg-secondary;
+
+    &__image {
+        @apply rounded-2xl w-full h-56 object-cover;
+    }
+
+    &__body {
+        @apply flex flex-col gap-3 pt-4 pr-2;
+    }
+
+    &__title {
+        @apply text-2xl font-bold;
+    }
+
+    &__description {
+        @apply text-gray-500 text-justify text-base leading-7;
+    }
+
+    &__button {
+        @apply mt-3 inline-flex text-lg text-blue font-bold items-center gap-2; 
+    }
+}
+
+.air__card {
+    &::after {
+        content: "";
+        display: block;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background-color: var(--bg-secondary);
+        position: absolute;
+        left: 0;
+        bottom: 60px;
+        transform: translateX(-50%);
+    }
+    
+    &::before {
+        content: "";
+        display: block;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background-color: var(--bg-secondary);
+        position: absolute;
+        right: 0;
+        bottom: 60px;
+        transform: translateX(50%);
+    }
+}
+
+.air__line {
+    position: absolute;
+    width: 70%;
+    border-top: 3px dashed var(--bg-secondary);
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.searcher{
+    @apply col-span-2 w-full h-20 bg-white rounded-lg ;
+direction: ltr;
+}
+.flighter__info{
+    @apply bg-current w-full inset-0
+    h-full;
+}

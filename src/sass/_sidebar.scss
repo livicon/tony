@@ -1,0 +1,21 @@
+.sidebar {
+    @apply lg:hidden fixed top-0 z-20 left-0 transform -translate-x-full duration-300 ease-out w-64 h-screen shadow-xl bg-white p-6;
+
+    &__body {
+        @apply flex flex-col gap-2;
+    }
+
+    &__item {
+        a {
+            @apply text-lg py-3 block;
+        }
+    }
+
+    &__drop {
+        @apply fixed w-full h-full bg-black opacity-50 top-0 left-0 z-10
+    }
+}
+
+.sidebar__active {
+    @apply translate-x-0;
+}

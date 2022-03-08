@@ -1,0 +1,79 @@
+.calendar-body {
+    
+    @apply relative ;
+}
+
+.next-button {
+    @apply hover:bg-gray-50 duration-150 active:scale-90 absolute cursor-pointer bg-white -left-10 top-1/2 transform -translate-y-1/2 p-3 rounded-full shadow-md flex justify-center items-center;
+}
+
+.prev-button {
+    @apply hover:bg-gray-50 duration-150 active:scale-90 absolute cursor-pointer bg-white -right-10 top-1/2 transform -translate-y-1/2 p-3 rounded-full shadow-md flex justify-center items-center;
+}
+
+.calendar-weekend {
+    @apply bg-green-50 text-green-500 rounded-b-md;
+}
+
+.calendar-weekend , .calendar-day {
+    @apply grid grid-cols-7;
+}
+
+.calendar-weekend-item , .calendar-day-item {
+    user-select: none;
+    @apply p-3 justify-center items-center text-center hover:bg-green-400 hover:text-white duration-150 rounded-b-md active:scale-90 transform cursor-pointer;
+}
+
+.calendar-body {
+    @apply grid grid-cols-2 gap-5 bg-white shadow-xl rounded-b-md p-3;
+}
+
+.calendar-header {
+    @apply flex justify-between items-center bg-white px-3 py-3 rounded-t-md;
+}
+
+.calendar-header button:nth-child(2) {
+    @apply bg-indigo-100 rounded-md shadow px-5 py-2 text-sm inline-flex justify-between items-center text-indigo-500 gap-3;
+}
+
+.calendar-month {
+    @apply flex rounded-t-md justify-center items-center border-b border-indigo-100 bg-indigo-50 text-indigo-500 py-3;
+}
+
+.wrapper {
+    @apply flex gap-3;
+}
+
+.calendar-header button:nth-child(1) {
+    @apply text-yellow-600 bg-yellow-100 rounded-md shadow px-5 py-2 text-sm inline-flex justify-between items-center gap-3 text-sm text-center;
+}
+
+.calendar-header button {
+    @apply transform active:scale-90 duration-100;
+}
+
+.calendar-day {
+   direction: ltr;
+}
+.calendar-day-m {
+   direction: rtl;
+}
+.calendar-day-item {
+    
+    @apply flex flex-col p-2 ;
+}
+    
+.calendar-day-item span:nth-child(2) {
+    @apply text-xs text-blue;
+}
+.calendar-contaienr{
+    @apply w-2/3 mx-auto mt-40 justify-center content-center;
+}
+.today-calendar-item{
+    background: #4A8CFF;
+    color: #eeeeee !important;
+}
+
+.holidays-calendar-item{
+    color: #ff253a;
+}

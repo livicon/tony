@@ -1,0 +1,16 @@
+.rater {
+    @apply block w-full bg-indigo-100 h-1/6 rounded p-8 flex flex-col gap-2;
+    &__row {
+        @apply block rounded-full bg-red-500 text-white;
+        &.yellow {
+            @apply bg-yellow-500;
+        }
+        &.green {
+            @apply bg-green-500;
+        }
+        &.blue {
+            @apply bg-blue;
+        }
+    }
+
+} 
