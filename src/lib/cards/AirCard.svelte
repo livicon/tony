@@ -111,7 +111,7 @@
       </div>
     </div>
 
-    <p class="text-[#E93D8D] text-2xl font-bold text-center mb-14 mt-10">
+    <p class="text-[#E93D8D] lg:text-2xl text-lg font-bold text-center mb-10 mt-10">
       تومان 1,200,000
     </p>
     <hr class="air__line" />

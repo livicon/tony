@@ -12,7 +12,7 @@
 }
 
 .calendar-weekend {
-    @apply bg-green-50 text-green-500 rounded-b-md;
+    @apply bg-gray-100 text-gray-400 rounded-b-md;
 }
 
 .calendar-weekend , .calendar-day {
@@ -21,7 +21,7 @@
 
 .calendar-weekend-item , .calendar-day-item {
     user-select: none;
-    @apply p-3 justify-center items-center text-center hover:bg-green-400 hover:text-white duration-150 rounded-b-md active:scale-90 transform cursor-pointer;
+    @apply p-3 justify-center items-center text-center hover:bg-[#1367d4] hover:text-white duration-150 rounded-b-md active:scale-90 transform cursor-pointer;
 }
 
 .calendar-body {
@@ -61,6 +61,7 @@
 .calendar-day-item {
     
     @apply flex flex-col p-2 ;
+    @apply rounded-3xl w-14;
 }
     
 .calendar-day-item span:nth-child(2) {
@@ -70,7 +71,8 @@
     @apply w-2/3 mx-auto mt-40 justify-center content-center;
 }
 .today-calendar-item{
-    background: #4A8CFF;
+    @apply rounded-3xl w-14;
+    background: #0350d6;
     color: #eeeeee !important;
 }
 

@@ -138,7 +138,7 @@
             cm.setMonth(gm);
         }
         console.log(gm);
-        console.log(cm);
+        console.log(cm); 
     }
     let todaytodo=()=>{
         cm.setDate(new Date().getDate());
@@ -180,8 +180,14 @@ submit()
    })
    
 </script>
-<div class="rounded-lg w-full max-w-screen-md mx-auto relative bg-white pt-5 pb-5">
-    <div class="rounded-t-lg bg-indigo-100 text-indigo-500 font-medium p-3 flex justify-between items-center text-center">
+<div class="rounded-lg w-full max-w-screen-md mx-auto relative bg-white pt-5 pb-5 shadow-md">
+    <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label>
+
+    <div class="rounded-t-lg  text-indigo-500 font-medium p-3 flex justify-between items-center text-center  ">
+
         <button class="p-2 bg-white rounded-md shadow"  on:click={()=>change()}>
             <span>تقویم شمسی</span>
             <svg
@@ -199,7 +205,13 @@ submit()
                 />
             </svg>
         </button>
+        <button on:click={()=>nextMonth()} class="w-auto transform  p-3  text-blue rounded-md"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg></button>
         <span>{MmonthChecker(gm+1)} {gy}</span>
+        <button on:click={()=>prevMonth()} class="w-auto  transform p-3  text-blue rounded-md"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+          </svg></button>
         <button class="p-2 bg-white rounded-md shadow" on:click={()=>todaytodo()}>
             <span>تاریخ امروز</span>
             <svg
@@ -215,18 +227,18 @@ submit()
                 />
             </svg>
         </button>
-        <button on:click={()=>nextMonth()} class="w-64 absolute -top-8 left-1/2 transform -translate-x-1/2  py-3 bg-blue text-white rounded-md">بعدی</button>
-        <button on:click={()=>prevMonth()} class="w-64 absolute -bottom-8 left-1/2 transform -translate-x-1/2 py-3 bg-blue text-white rounded-md">قبلی</button>
+      
     </div>
     <div>
-        <div class="grid grid-cols-7 bg-green-100 text-green-600">
-            <div class="calendar-weekend-item">Sat</div>
-            <div class="calendar-weekend-item">Fri</div>
-            <div class="calendar-weekend-item">Thur</div>
-            <div class="calendar-weekend-item">Wed</div>
-            <div class="calendar-weekend-item">Tue</div>
-            <div class="calendar-weekend-item">Mon</div>
-            <div class="calendar-weekend-item">Sun</div>
+
+        <div class="grid grid-cols-7 h-12 text-center content-center bg-gray-100 text-gray-400">
+            <div class="mobile-calendar-weekend-item">Sat</div>
+            <div class="mobile-calendar-weekend-item">Fri</div>
+            <div class="mobile-calendar-weekend-item">Thur</div>
+            <div class="mobile-calendar-weekend-item">Wed</div>
+            <div class="mobile-calendar-weekend-item">Tue</div>
+            <div class="mobile-calendar-weekend-item">Mon</div>
+            <div class="mobile-calendar-weekend-item">Sun</div>
         </div>
         <div class="grid grid-cols-7 bg-white text-gray-400 rounded-b-lg shadow ltr">
            
@@ -253,4 +265,67 @@ submit()
     .ltr{
         direction: ltr !important;
     }
+    .switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 14px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: -6px;
+  bottom: -4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  box-shadow: 0 0 5px 0px #aaa;
+}
+
+input:checked + .slider {
+  background-color: #ddd;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #21a6F3;
+  
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(34px);
+  -ms-transform: translateX(34px);
+  transform: translateX(34px);
+  background-color: #2196F3;
+  
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
 </style>

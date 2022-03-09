@@ -83,8 +83,8 @@
     transform: translateX(-50%);
 }
 .searcher{
-    @apply col-span-2 w-full h-20 bg-white rounded-lg ;
-direction: ltr;
+    @apply col-span-1 sm:col-span-2 w-full h-20 bg-white rounded-lg ;
+direction: ltr; 
 }
 .flighter__info{
     @apply bg-current w-full inset-0

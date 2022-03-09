@@ -1,12 +1,12 @@
 <script>
   import AirCard from "$lib/cards/AirCard.svelte";
   import Sort from "$lib/components/Sort.svelte";
-  import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
-  import { Swiper, SwiperSlide } from 'swiper/svelte';
-  import 'swiper/css';
-  import 'swiper/css/navigation';
-  import 'swiper/css/pagination';
-  import 'swiper/css/scrollbar';
+  import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+  import { Swiper, SwiperSlide } from "swiper/svelte";
+  import "swiper/css";
+  import "swiper/css/navigation";
+  import "swiper/css/pagination";
+  import "swiper/css/scrollbar";
 
   let data = [
     {
@@ -34,10 +34,8 @@
     date: {
       jalali: {},
       miladi: {},
-    },result:{
-
-    }
-
+    },
+    result: {},
   };
   function selecFilterHandler(item) {
     let filters = data.map((d) => {
@@ -49,7 +47,7 @@
 </script>
 
 <div class="flex gap-3">
-  <div class="w-1/4">
+  <div class="w-1/4 hidden lg:block md:w-1/3 md:block">
     <div class="filters rounded-xl bg-secondary px-5 py-8 sticky top-5">
       <h3 class="text-3xl font-bold mb-10">فیلتر ها</h3>
       <div class="box mb-5">
@@ -133,14 +131,27 @@
       </div>
     </div>
   </div>
-  <div class="w-2/4 rounded-t-xl">
+  <div class="lg:w-2/4 w-full rounded-t-xl md:w-2/3">
     <Swiper
-      slidesPerView={6}
-      on:slideChange={() => console.log('slide change')}
+      breakpoints={{
+        1024: {
+          spaceBetween: 10,
+          slidesPerView: 6,
+        },
+        768: {
+          spaceBetween: 10,
+          slidesPerView: 7,
+        },
+        640: {
+          spaceBetween: 20,
+          slidesPerView: 4,
+        },
+      }}
+      on:slideChange={() => console.log("slide change")}
       on:swiper={(e) => console.log(e.detail[0])}
     >
-      {#each [1, 2, 3, 4, 5, 6, 7, 8,1, 2, 3, 4, 5, 6, 7, 8] as i}
-      <SwiperSlide>
+      {#each [1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8] as i}
+        <SwiperSlide>
           <div
             class="hover:bg-sky-50 cursor-pointer flex flex-col gap-2 hover:border-blue hover:bg-white border-2 border-transparent duration-150 items-center rounded-xl p-4"
           >
@@ -149,7 +160,7 @@
             <span class="text-sm font-semibold">820000</span>
             <span class="text-sm">تومان</span>
           </div>
-      </SwiperSlide>
+        </SwiperSlide>
       {/each}
     </Swiper>
     <div class="flex items-center p-4 gap-3 justify-between">
@@ -167,8 +178,9 @@
         {/each}
       </div>
     </div>
-
-    <div class="p-6 gap-8 bg-secondary rounded-md grid grid-cols-2">
+    <div
+      class="p-6 gap-8 bg-secondary rounded-md grid grid-cols-1 lg:grid-cols-2 sm:grid-cols-2 md:grid-cols-2"
+    >
       <Sort />
       <AirCard />
       <AirCard />
@@ -188,7 +200,7 @@
       <AirCard />
     </div>
   </div>
-  <div class="w-1/4 flex flex-col gap-3">
+  <div class="w-1/4 flex-col gap-3 hidden lg:flex md:hidden">
     <div
       class="ad__box p-10 py-20 text-lg font-bold text-center bg-secondary rounded-md"
     >

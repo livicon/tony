@@ -1,7 +1,6 @@
 <script>
     import jd from 'jalali-date'
     export let value={}
-    import Calendar from './calendar.svelte';
     import { JalaliDateTime } from 'jalali-date-time';
     import { beforeUpdate, afterUpdate } from 'svelte';
     import { date } from './date';
