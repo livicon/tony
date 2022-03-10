@@ -1,13 +1,18 @@
 <script>
   import AirCard from "$lib/cards/AirCard.svelte";
   import Sort from "$lib/components/Sort.svelte";
+  import MultiSelect from "$lib/tonies/MultiSelect.svelte";
   import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
   import { Swiper, SwiperSlide } from "swiper/svelte";
   import "swiper/css";
   import "swiper/css/navigation";
   import "swiper/css/pagination";
   import "swiper/css/scrollbar";
-
+  import {cash} from "$lib/cash/cash";
+ 
+  cash.subscribe((item)=>{
+    console.log(item);
+  })
   let data = [
     {
       title: "زود ترین",
@@ -181,7 +186,8 @@
     <div
       class="p-6 gap-8 bg-secondary rounded-md grid grid-cols-1 lg:grid-cols-2 sm:grid-cols-2 md:grid-cols-2"
     >
-      <Sort />
+      <!-- <Sort /> -->
+      <MultiSelect />
       <AirCard />
       <AirCard />
       <AirCard />

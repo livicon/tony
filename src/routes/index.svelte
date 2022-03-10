@@ -6,11 +6,11 @@
   import Mdate from "$lib/components/Date/Mdate.svelte";
   import { currentDatePicker } from "$lib/contexts/store";
   import { Swiper, SwiperSlide } from "swiper/svelte";
-  import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+  import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
   import "swiper/css";
-  import 'swiper/css/pagination';
-  import 'swiper/css/navigation';
-  import 'swiper/css/scrollbar';
+  import "swiper/css/pagination";
+  import "swiper/css/navigation";
+  import "swiper/css/scrollbar";
   let site = null;
   currentLang.subscribe((e) => (site = e));
   let show = false;
@@ -240,7 +240,9 @@
       on:swiper={(e) => console.log(e.detail[0])}
     >
       <SwiperSlide>
-        <div class="flex rounded-xl gap-4 items-center bg-white pl-10 shadow hover:shadow-lg duration-150 cursor-pointer">
+        <div
+          class="flex rounded-xl gap-4 items-center bg-white pl-10 shadow hover:shadow-lg duration-150 cursor-pointer"
+        >
           <img
             alt="chamedan safar"
             class="w-20 h-20 rounded-xl shadow bg-cover"
@@ -298,7 +300,9 @@
         </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div class="flex rounded-xl gap-4 items-center bg-white pl-10 shadow hover:shadow-lg duration-150 cursor-pointer">
+        <div
+          class="flex rounded-xl gap-4 items-center bg-white pl-10 shadow hover:shadow-lg duration-150 cursor-pointer"
+        >
           <img
             alt="chamedan safar"
             class="w-20 h-20 rounded-xl shadow bg-cover"
@@ -356,7 +360,9 @@
         </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div class="flex rounded-xl gap-4 items-center bg-white pl-10 shadow hover:shadow-lg duration-150 cursor-pointer">
+        <div
+          class="flex rounded-xl gap-4 items-center bg-white pl-10 shadow hover:shadow-lg duration-150 cursor-pointer"
+        >
           <img
             alt="chamedan safar"
             class="w-20 h-20 rounded-xl shadow bg-cover"
@@ -413,8 +419,10 @@
           </div>
         </div>
       </SwiperSlide>
-       <SwiperSlide>
-        <div class="flex rounded-xl gap-4 items-center bg-white pl-10 shadow hover:shadow-lg duration-150 cursor-pointer">
+      <SwiperSlide>
+        <div
+          class="flex rounded-xl gap-4 items-center bg-white pl-10 shadow hover:shadow-lg duration-150 cursor-pointer"
+        >
           <img
             alt="chamedan safar"
             class="w-20 h-20 rounded-xl shadow bg-cover"
@@ -471,8 +479,10 @@
           </div>
         </div>
       </SwiperSlide>
-       <SwiperSlide>
-        <div class="flex rounded-xl gap-4 items-center bg-white pl-10 shadow hover:shadow-lg duration-150 cursor-pointer">
+      <SwiperSlide>
+        <div
+          class="flex rounded-xl gap-4 items-center bg-white pl-10 shadow hover:shadow-lg duration-150 cursor-pointer"
+        >
           <img
             alt="chamedan safar"
             class="w-20 h-20 rounded-xl shadow bg-cover"
@@ -529,8 +539,10 @@
           </div>
         </div>
       </SwiperSlide>
-       <SwiperSlide>
-        <div class="flex rounded-xl gap-4 items-center bg-white pl-10 shadow hover:shadow-lg duration-150 cursor-pointer">
+      <SwiperSlide>
+        <div
+          class="flex rounded-xl gap-4 items-center bg-white pl-10 shadow hover:shadow-lg duration-150 cursor-pointer"
+        >
           <img
             alt="chamedan safar"
             class="w-20 h-20 rounded-xl shadow bg-cover"

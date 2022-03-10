@@ -1,22 +1,18 @@
 <script>
-    let rates = [
-        {
-            title: "عملکرد 1",
-            count: 60,
-        },
-        {
-            title: "عملکرد 2",
-            count: 45,
-        },
-        {
-            title: "عملکرد 3",
-            count: 83,
-        },
-        {
-            title: "عملکرد 4",
-            count: 22,
-        },
-    ];
+    export let datas
+    let rates = [];
+  console.log(datas);
+
+for (const property in datas){
+rates.push({name:property,count:datas[property] })
+   
+  }
+  console.log(rates);
+  
+        
+    
+
+  
     function generateRaters() {
         const newList = rates.map((item) => {
             if (item.count > 80)
@@ -46,7 +42,7 @@
 <div class="rater">
     {#each rates as item}
         <div class="flex justify-betweem items-center w-full">
-            <h3 class="w-1/4">عملکرد 1</h3>
+            <h3 class="w-1/4">{item.name}</h3>
             <div class="w-3/4 rounded-full flex items-center justify-end gap-2">
                 <span>{item.rateT.fa}</span>
                 <div

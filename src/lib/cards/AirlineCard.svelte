@@ -1,11 +1,16 @@
+<script>
+export let data
+console.log(data);
+
+</script>
 <div class="agency__card">
     <img
-      class="agency__card__image"
-      src="/images/iwan-shimko-tCp2K2sYpFg-unsplash.jpg"
+      class="agency__card__image w-full"
+      src={data.more.iconUrl}
     />
     <div class="agency__card__body">
-      <h2 class="agency__card__title">شرکت هواپیمایی شماره 1</h2>
-      <p class="agency__card__description">جزئیات شرکت هواپیمایی شماره دو</p>
+      <h2 class="agency__card__title">{data.more.text.fa.title}</h2>
+      <p class="agency__card__description">{data.more.text.fa.content.substring(0, 23)+"..."}</p>
       <div class="agency__card__stars">
         <svg
           xmlns="http://www.w3.org/2000/svg"

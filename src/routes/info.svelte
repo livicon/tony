@@ -1,28 +1,40 @@
 <script>
   import Rates from "$lib/components/rates/Rates.svelte";
-  let meta=[
-        { Rates: 5, ab: "ab", fa: "fa", en: "en" },
-        { Rates: 1, ab: "ab", fa: "fa", en: "en" },
-        { Rates: 2, ab: "ab", fa: "fa", en: "en" },
-        { Rates: 3, ab: "ab", fa: "fa", en: "en" }
-      ]
+  import { page } from '$app/stores';
+import { cash } from "$lib/cash/cash";
+  
+  let cat
+  let val
+  let fill
+  let data={}
+
+    
+page.subscribe((e)=>{
+cat=e.url.search.replace('?', '').split("=")[0]
+val= e.url.search.replace('?', '').split("=")[1]
+})
+cash.subscribe((e)=>{
+      if(cat=="airlines")
+      data=e.AirLines
+    })
+    data.find((item)=>{if(item.name==val){
+      fill=item
+    }
+    })
+   
 </script>
 
-<h1 class="page__title">درباره ما</h1>
+<h1 class="page__title">{fill.more.text.fa.title}</h1>
 <div class="flex items-center gap-5 mb-32">
   <div class="w-1/2">
-    <h3 class="text-3xl mb-5 text-black font-bold">چمدان سفر چیست؟</h3>
+    <h3 class="text-3xl mb-5 text-black font-bold">{fill.more.text.fa.title} چیست؟</h3>
     <p class="text-gray-500 text-justify leading-6">
-      لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از
-      طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان
-      که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف
-      بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال
-      و آینده شناخت فراوان جامعه و متخصصان را می طلبد
+     {fill.more.text.fa.content}
     </p>
   </div>
   <div class="w-1/2 p-10">
     <Rates
-      data={meta}
+      datas={fill.more.PassengerRating}
     />
   </div>
 </div>
@@ -30,7 +42,7 @@
   <div class="w-1/2">
     <img
       class="w-full rounded-3xl"
-      src="/images/phil-mosley-wOK2f2stPDg-unsplash.jpg"
+      src={fill.more.iconUrl}
     />
     </div>
   <div class="w-1/2">
